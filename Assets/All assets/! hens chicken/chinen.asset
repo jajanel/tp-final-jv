@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fb551034184ee4db9be6c551382afe, type: 3}
+  m_Name: chinen
+  m_EditorClassIdentifier: 
+  actions:
+  - enabled: 1
+    name: long
+    actionLayerAnimations:
+      enter: {fileID: 0}
+      exit: {fileID: 0}
+    fxLayerAnimations:
+      enter: {fileID: 7400000, guid: 367e08c61d40ca74c888358d560774b3, type: 2}
+      exit: {fileID: 0}
+    fadeIn: 0
+    hold: 0
+    fadeOut: 0
+    objectProperties: []
+    parameterDrivers: []
+    triggers: []
+    bodyOverride:
+      head: 0
+      leftHand: 0
+      rightHand: 0
+      hip: 0
+      leftFoot: 0
+      rightFoot: 0
+      leftFingers: 0
+      rightFingers: 0
+      eyes: 0
+      mouth: 0
+    foldoutMain: 0
+    foldoutTriggers: 0
+    foldoutIkOverrides: 0
+    foldoutToggleObjects: 0
+    foldoutMaterialSwaps: 0
+    foldoutAnimations: 1
+    foldoutParameterDrivers: 0
+    menuType: 4453
+    icon: {fileID: 0}
+    parameter: long
+    subMenu: {fileID: 0}
+    subActions: []
+    isOffState: 0
+    controlValue: 1
+    foldoutSubActions: 0
+  - enabled: 1
+    name: long loop
+    actionLayerAnimations:
+      enter: {fileID: 0}
+      exit: {fileID: 0}
+    fxLayerAnimations:
+      enter: {fileID: 7400000, guid: 81b79fadbc83da94897ec8d0886c6f98, type: 2}
+      exit: {fileID: 0}
+    fadeIn: 0
+    hold: 0
+    fadeOut: 0
+    objectProperties: []
+    parameterDrivers: []
+    triggers: []
+    bodyOverride:
+      head: 0
+      leftHand: 0
+      rightHand: 0
+      hip: 0
+      leftFoot: 0
+      rightFoot: 0
+      leftFingers: 0
+      rightFingers: 0
+      eyes: 0
+      mouth: 0
+    foldoutMain: 0
+    foldoutTriggers: 0
+    foldoutIkOverrides: 0
+    foldoutToggleObjects: 0
+    foldoutMaterialSwaps: 0
+    foldoutAnimations: 1
+    foldoutParameterDrivers: 0
+    menuType: 4453
+    icon: {fileID: 0}
+    parameter: long lp
+    subMenu: {fileID: 0}
+    subActions: []
+    isOffState: 0
+    controlValue: 0
+    foldoutSubActions: 0
+  - enabled: 1
+    name: henssss
+    actionLayerAnimations:
+      enter: {fileID: 0}
+      exit: {fileID: 0}
+    fxLayerAnimations:
+      enter: {fileID: 0}
+      exit: {fileID: 0}
+    fadeIn: 0
+    hold: 0
+    fadeOut: 0
+    objectProperties:
+    - type: 7959
+      path: chicken
+      objects:
+      - {fileID: 2100000, guid: 64e906b20d31987469d9631dc46c8273, type: 2}
+      values: []
+      objRef: {fileID: 0}
+    parameterDrivers: []
+    triggers: []
+    bodyOverride:
+      head: 0
+      leftHand: 0
+      rightHand: 0
+      hip: 0
+      leftFoot: 0
+      rightFoot: 0
+      leftFingers: 0
+      rightFingers: 0
+      eyes: 0
+      mouth: 0
+    foldoutMain: 0
+    foldoutTriggers: 0
+    foldoutIkOverrides: 0
+    foldoutToggleObjects: 1
+    foldoutMaterialSwaps: 0
+    foldoutAnimations: 0
+    foldoutParameterDrivers: 0
+    menuType: 4453
+    icon: {fileID: 0}
+    parameter: henssss
+    subMenu: {fileID: 0}
+    subActions: []
+    isOffState: 0
+    controlValue: 0
+    foldoutSubActions: 0
+  - enabled: 1
+    name: its raining hens
+    actionLayerAnimations:
+      enter: {fileID: 7400000, guid: 843b8af774d16894ba3b69787e0896f6, type: 2}
+      exit: {fileID: 0}
+    fxLayerAnimations:
+      enter: {fileID: 7400000, guid: 843b8af774d16894ba3b69787e0896f6, type: 2}
+      exit: {fileID: 0}
+    fadeIn: 0
+    hold: 0
+    fadeOut: 0
+    objectProperties:
+    - type: 3450
+      path: addada
+      objects: []
+      values: []
+      objRef: {fileID: 0}
+    parameterDrivers: []
+    triggers: []
+    bodyOverride:
+      head: 1
+      leftHand: 1
+      rightHand: 1
+      hip: 1
+      leftFoot: 1
+      rightFoot: 1
+      leftFingers: 1
+      rightFingers: 1
+      eyes: 0
+      mouth: 0
+    foldoutMain: 0
+    foldoutTriggers: 0
+    foldoutIkOverrides: 1
+    foldoutToggleObjects: 1
+    foldoutMaterialSwaps: 0
+    foldoutAnimations: 1
+    foldoutParameterDrivers: 0
+    menuType: 4453
+    icon: {fileID: 0}
+    parameter: its raining hens
+    subMenu: {fileID: 0}
+    subActions: []
+    isOffState: 0
+    controlValue: 0
+    foldoutSubActions: 0
