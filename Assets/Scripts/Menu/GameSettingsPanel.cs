@@ -32,19 +32,23 @@ public class GameSettingsPanel : MonoBehaviour
     {
         GameSettings.SoundVolume = sliderVolume.value;
         audioSource.volume = sliderVolume.value;
+        Debug.Log("Volume : " + GameSettings.SoundVolume);
     }
     public void SetParticule()
     {
         GameSettings.ParticuleBool = toggleParticule.isOn;
+        Debug.Log("Particule : " + GameSettings.ParticuleBool);
     }
     public void SetDifficulter()
     {
         gameState.difficulte = sliderDifficulter.value;
         SaveSystem.SaveGame(gameState);
+        Debug.Log("Difficulté : " + gameState.difficulte);
     }
     public void CloseButton()
     {
         parametreScreen.SetActive(false);
+        Debug.Log("Fermeture des paramètres");
     }
     
 }
