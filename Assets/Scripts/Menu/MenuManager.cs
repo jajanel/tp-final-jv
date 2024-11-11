@@ -29,6 +29,7 @@ public class MenuManager : MonoBehaviour
     }
     public void NouvellePartie()
     {
+        //Ici ouvrir la fenêtre qui permet de choisir son personnage
         SceneNavigator.StartGame();
         audioSource.Stop();
         SaveSystem.ContinueGame = false;
