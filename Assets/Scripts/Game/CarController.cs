@@ -13,9 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         progress = 0f;
-        spawnPos = new Vector3(-123, 0, 22);
-
-
+        spawnPos = new Vector3(-100, 0, 22);
     }
 
     // Update is called once per frame

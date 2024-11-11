@@ -11,16 +11,20 @@ public class GameManager : MonoBehaviour
     private float nextDelay = 5f;
     private float progress;
     private float repeatDelay = 2f;
+    private float spawnz = 23.8f;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnPos = new Vector3(0,0,0);
+        progress = 0f;
+        spawnPos = new Vector3(0,0, spawnz);
     }
 
     // Update is called once per frame
     void Update()
     {
+        progress += Time.deltaTime;
+
         if (progress >= nextDelay)
         {
             //Spawner un obstacle et reset le progrès
@@ -36,7 +40,9 @@ public class GameManager : MonoBehaviour
     private void SpawnRoute()
     {
         int index = Random.Range(0, routes.Length);
-        GameObject animal = routes[index];
-        Instantiate(animal, spawnPos, animal.transform.rotation);
+        GameObject route = routes[index];
+        spawnz += route.GetComponent<BoxCollider>().size.z;
+        spawnPos = new Vector3(0, 0, spawnz);
+        Instantiate(route, spawnPos, route.transform.rotation);
     }
 }
