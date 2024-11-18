@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CarManager : MonoBehaviour
 {
     public GameObject[] voitures;
     private float repeatDelay = 2f;
@@ -13,7 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         progress = 0f;
-        spawnPos = new Vector3(-100, 0, 22);
+        spawnPos = this.gameObject.transform.position;
     }
 
     // Update is called once per frame

@@ -9,12 +9,16 @@ public class MoveCar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.Rotate(0, 90, 0, Space.Self);
+        this.transform.Rotate(0, 90, 0, Space.World);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
+        if(this.gameObject.transform.position.x >= 90)
+        {
+            Destroy(gameObject);
+        }
     }
 }

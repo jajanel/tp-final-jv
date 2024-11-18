@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 8438249578522678305}
   - component: {fileID: 5980314117720760555}
   - component: {fileID: 2252757861110005586}
+  - component: {fileID: -4981061801456980214}
+  - component: {fileID: 2206539641881971808}
   m_Layer: 0
   m_Name: civil-car-B
   m_TagString: Untagged
@@ -187,6 +189,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f9559879a4890489051ed37045aee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-4981061801456980214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331879815992590654}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.3792841, y: 1.9853168, z: 4.5538406}
+  m_Center: {x: 0.00000011920929, y: 1.225193, z: 0.014166236}
+--- !u!54 &2206539641881971808
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331879815992590654}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
 --- !u!1 &6328945033280581619
 GameObject:
   m_ObjectHideFlags: 0

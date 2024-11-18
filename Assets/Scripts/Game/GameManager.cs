@@ -11,13 +11,16 @@ public class GameManager : MonoBehaviour
     private float nextDelay = 5f;
     private float progress;
     private float repeatDelay = 2f;
-    private float spawnz = 23.8f;
+    private float spawnz = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         progress = 0f;
-        spawnPos = new Vector3(0,0, spawnz);
+        spawnPos = new Vector3(-45,0, spawnz);
+        for (int i = 0; i < 10; i++) {
+            SpawnRoute();
+        }
     }
 
     // Update is called once per frame
@@ -42,7 +45,7 @@ public class GameManager : MonoBehaviour
         int index = Random.Range(0, routes.Length);
         GameObject route = routes[index];
         spawnz += route.GetComponent<BoxCollider>().size.z;
-        spawnPos = new Vector3(0, 0, spawnz);
+        spawnPos = new Vector3(-45, 0, spawnz);
         Instantiate(route, spawnPos, route.transform.rotation);
     }
 }
