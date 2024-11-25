@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     private float speed = 5f;
     private Animator playerAnim;
-    public TextMeshProUGUI scoreText;
+    //public TextMeshProUGUI scoreText;
     int score;
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
-        scoreText.text = $"Score:{score}";
+        //scoreText.text = $"Score:{score}";
         playerAnim = GetComponent<Animator>();
     }
 
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         if(other.tag.Equals("routeFini"))
         {
             score++;
-            scoreText.text = $"Score:{score}";
+            //scoreText.text = $"Score:{score}";
         }
         
     }

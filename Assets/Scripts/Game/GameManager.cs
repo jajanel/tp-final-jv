@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,12 +14,16 @@ public class GameManager : MonoBehaviour
     private float repeatDelay = 2f;
     private float spawnz = 0f;
     public PausePanel pausePanel;
-    public static GameManager instance;
-    public AudioSource gameMusic;
+    public GameObject[] characterPrefabs; // Liste des prefabs des personnages
+    public Vector3 playerSpawnPoint; // Point d'apparition du joueur
+    private string selectedCharacter;
     public GameState gameState;
+    public AudioSource gameMusic;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerSpawnPoint = new Vector3(40, 0, -8);
         progress = 0f;
         pausePanel = GetComponent<PausePanel>();
         spawnPos = new Vector3(-45,0, spawnz);
@@ -32,6 +35,22 @@ public class GameManager : MonoBehaviour
         {
             gameState = SaveSystem.LoadStateFromSave();
         }
+
+        selectedCharacter = PlayerPrefs.GetString("SelectedCharacter");
+        Debug.Log($"Personnage sélectionné pour la scène : {selectedCharacter}");
+
+        GameObject characterPrefab = System.Array.Find(characterPrefabs, prefab => prefab.name == selectedCharacter);
+
+        if (characterPrefab != null)
+        {
+            Instantiate(characterPrefab, playerSpawnPoint, Quaternion.identity);
+            Debug.Log($"Personnage instancié : {selectedCharacter}");
+        }
+        else
+        {
+            Debug.LogError("Aucun prefab correspondant au personnage sélectionné.");
+        }
+
         gameMusic = FindObjectOfType<AudioSource>();
         gameMusic.volume = GameSettings.SoundVolume;
     }
@@ -49,7 +68,8 @@ public class GameManager : MonoBehaviour
 
             //Prochain délai est aléatoire autour de repeatDelay
             nextDelay = Random.Range(0.85f * repeatDelay, 1.15f * repeatDelay);
-        }else if(GameOverController.GetGameOver())
+        }
+        else if (GameOverController.GetGameOver())
         {
             pausePanel.GameOver();
         }
@@ -61,6 +81,7 @@ public class GameManager : MonoBehaviour
         {
             pausePanel.ClosePanel();
         }
+        gameState = new GameState();
 
     }
 

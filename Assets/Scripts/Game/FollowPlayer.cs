@@ -6,9 +6,36 @@ public class FollowPlayer : MonoBehaviour
 {
     public Transform player;
 
-    // Update is called once per frame
+    private IEnumerator FindPlayer()
+    {
+        while (player == null)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+                Debug.Log("Joueur trouvé !");
+            }
+            else
+            {
+                Debug.LogWarning("Recherche du joueur...");
+            }
+
+            yield return new WaitForSeconds(0.1f); 
+        }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(FindPlayer());
+    }
+
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(10, 3, 0);
+        if (player != null)
+        {
+            transform.position = player.position + new Vector3(10, 3, 0);
+        }
     }
 }
