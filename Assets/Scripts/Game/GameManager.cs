@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
     private float repeatDelay = 2f;
     private float spawnz = 0f;
     public PausePanel pausePanel;
-
+    public static GameManager instance;
+    public AudioSource gameMusic;
+    public GameState gameState;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,13 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 10; i++) {
             SpawnRoute();
         }
+        gameState = new GameState();
+        if (SaveSystem.CheckHasSave() && SaveSystem.ContinueGame)
+        {
+            gameState = SaveSystem.LoadStateFromSave();
+        }
+        gameMusic = FindObjectOfType<AudioSource>();
+        gameMusic.volume = GameSettings.SoundVolume;
     }
 
     // Update is called once per frame

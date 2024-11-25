@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!GameOverController.GetGameOver()) { 
             horizontalInput = Input.GetAxis("Horizontal");
-            transform.Translate(Vector3.forward * speed * horizontalInput * Time.deltaTime,Space.World);
             if(horizontalInput == 0)
             {
                 playerAnim.SetBool("walk_b", false);
@@ -31,6 +30,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 playerAnim.SetBool("walk_b", true);
+                transform.Translate(Vector3.forward * speed * horizontalInput * Time.deltaTime, Space.World);
             }
         }
     }

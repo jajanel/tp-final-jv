@@ -16,6 +16,7 @@ public class PausePanel : MonoBehaviour
         gameOverScreen.SetActive(false);
         gameManager = GetComponent<GameManager>();
         gameIsPause = false;
+        Time.timeScale = 1;
     }
     public void OpenPanel()
     {
@@ -36,8 +37,8 @@ public class PausePanel : MonoBehaviour
     }
     public void SaveGame()
     {
-        //SaveSystem.SaveGame(gameManager.gameState);
-        //Debug.Log(SaveSystem.CheckHasSave());
+        SaveSystem.SaveGame(gameManager.gameState);
+        Debug.Log(SaveSystem.CheckHasSave());
     }
     public void ReturnToMenu()
     {
