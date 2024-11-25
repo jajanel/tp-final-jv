@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: -4226899321322515683}
   m_Layer: 0
   m_Name: civil-car-C
-  m_TagString: Untagged
+  m_TagString: voiture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

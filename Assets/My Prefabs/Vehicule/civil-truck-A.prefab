@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: -193672611597717231}
   m_Layer: 0
   m_Name: civil-truck-A
-  m_TagString: Untagged
+  m_TagString: voiture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

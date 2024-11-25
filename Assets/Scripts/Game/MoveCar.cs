@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveCar : MonoBehaviour
 {
-    private float speed = 10f;
+    private float speed = 75f;
 
     // Start is called before the first frame update
     void Start()
