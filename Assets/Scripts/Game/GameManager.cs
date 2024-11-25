@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         progress += Time.deltaTime;
 
-        if (progress >= nextDelay)
+        if (progress >= nextDelay && !GameOverController.GetGameOver())
         {
             //Spawner un obstacle et reset le progrès
             progress = 0f;
