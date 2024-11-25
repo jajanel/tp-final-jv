@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameManager gameManager;
     public float horizontalInput;
     private float speed = 5f;
     private Animator playerAnim;
-    //public TextMeshProUGUI scoreText;
-    int score;
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
-        //scoreText.text = $"Score:{score}";
+        gameManager = GameObject.Find("Spawn Manager").GetComponent<GameManager>();
         playerAnim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -38,8 +37,9 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("voiture") )
         {
-            GameOverController.GameOver();
+            //pk parfois l'animation est faite et quand la voiture nous frole, l'animation de marche continue
             playerAnim.SetBool("Death_b", true);
+            GameOverController.GameOver();
         }
     }
 
@@ -47,8 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag.Equals("routeFini"))
         {
-            score++;
-            //scoreText.text = $"Score:{score}";
+           gameManager.compteScore();
         }
         
     }

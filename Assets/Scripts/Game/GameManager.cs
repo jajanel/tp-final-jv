@@ -7,7 +7,8 @@ using UnityEngine.SocialPlatforms.Impl;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] routes;
-
+    public TextMeshProUGUI scoreText;
+    int score;
     public Vector3 spawnPos;
     private float nextDelay = 5f;
     private float progress;
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+        scoreText.text = $"Score:{score}";
         playerSpawnPoint = new Vector3(40, 0, -8);
         progress = 0f;
         pausePanel = GetComponent<PausePanel>();
@@ -83,6 +86,12 @@ public class GameManager : MonoBehaviour
         }
         gameState = new GameState();
 
+    }
+
+    public void compteScore()
+    {
+        score++;
+        scoreText.text = $"Score: {score}";
     }
 
     private void SpawnRoute()

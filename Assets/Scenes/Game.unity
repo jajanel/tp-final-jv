@@ -967,6 +967,7 @@ MonoBehaviour:
   routes:
   - {fileID: 2398039146048740388, guid: ed73698a254ef7148838f79665efe8e8, type: 3}
   - {fileID: 179128682651277302, guid: c511c00bff1181242a446bc47ad8827a, type: 3}
+  scoreText: {fileID: 1580778830}
   spawnPos: {x: 0, y: 0, z: 0}
   pausePanel: {fileID: 0}
   characterPrefabs:
@@ -1006,58 +1007,6 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   gameIsPause: 0
   gameOverScreen: {fileID: 84274959}
---- !u!1 &355298720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 355298722}
-  - component: {fileID: 355298721}
-  m_Layer: 0
-  m_Name: CarController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &355298721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355298720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57cb2ccb65a7ec64abefedc87ecc3c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voitures:
-  - {fileID: 2116873390560433033, guid: 9c1ce683b1c81c14db2877101803e148, type: 3}
-  - {fileID: 5331879815992590654, guid: 863eeae6d03d2fb48902e2e45e9d26f2, type: 3}
-  - {fileID: 8886028446758582084, guid: 3ef40fdfa07558e488caa8a889cab3fc, type: 3}
-  - {fileID: 994628432591495081, guid: 6610511ce6d9f204db23b735f33fe800, type: 3}
-  - {fileID: 8231525881579637801, guid: 2185d170b3de2c74d80e459b6e83bae8, type: 3}
-  - {fileID: 1277777353302610333, guid: 57c875bd1ea829146b12c95d29e19ae3, type: 3}
-  spawnPos: {x: 0, y: 0, z: 0}
---- !u!4 &355298722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355298720}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.36, y: 1.3900001, z: 20.58}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471029507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,7 +2104,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8867924, g: 0.87781096, b: 0.68182623, a: 1}
+  m_Color: {r: 0.9946044, g: 1, b: 0.8632076, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2165,7 +2114,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.445
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -3643,7 +3592,6 @@ SceneRoots:
   - {fileID: 352778924}
   - {fileID: 240900379}
   - {fileID: 471029508}
-  - {fileID: 355298722}
   - {fileID: 133998916}
   - {fileID: 990041498}
   - {fileID: 787324531}
