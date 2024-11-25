@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     private float speed = 5f;
+    private Animator playerAnim;
     public TextMeshProUGUI scoreText;
     int score;
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         score = 0;
         scoreText.text = $"Score:{score}";
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,14 @@ public class PlayerController : MonoBehaviour
         if (!GameOverController.GetGameOver()) { 
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector3.forward * speed * horizontalInput * Time.deltaTime,Space.World);
+            if(horizontalInput == 0)
+            {
+                playerAnim.SetBool("walk_b", false);
+            }
+            else
+            {
+                playerAnim.SetBool("walk_b", true);
+            }
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -29,6 +39,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag.Equals("voiture") )
         {
             GameOverController.GameOver();
+            playerAnim.SetBool("Death_b", true);
         }
     }
 
