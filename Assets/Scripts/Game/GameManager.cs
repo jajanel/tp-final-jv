@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,12 +14,13 @@ public class GameManager : MonoBehaviour
     private float progress;
     private float repeatDelay = 2f;
     private float spawnz = 0f;
-    
+    public PausePanel pausePanel;
 
     // Start is called before the first frame update
     void Start()
     {
         progress = 0f;
+        pausePanel = GetComponent<PausePanel>();
         spawnPos = new Vector3(-45,0, spawnz);
         for (int i = 0; i < 10; i++) {
             SpawnRoute();
@@ -38,8 +40,19 @@ public class GameManager : MonoBehaviour
 
             //Prochain délai est aléatoire autour de repeatDelay
             nextDelay = Random.Range(0.85f * repeatDelay, 1.15f * repeatDelay);
+        }else if(GameOverController.GetGameOver())
+        {
+            pausePanel.GameOver();
         }
-    
+        else if (Input.GetKeyDown(KeyCode.Escape) && !pausePanel.gameIsPause)
+        {
+            pausePanel.OpenPanel();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && pausePanel.gameIsPause)
+        {
+            pausePanel.ClosePanel();
+        }
+
     }
 
     private void SpawnRoute()

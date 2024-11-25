@@ -310,7 +310,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 69636897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352778927}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: ReturnToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &69636897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,7 +605,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 166386144}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352778927}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &166386144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -804,6 +828,7 @@ GameObject:
   - component: {fileID: 352778924}
   - component: {fileID: 352778925}
   - component: {fileID: 352778926}
+  - component: {fileID: 352778927}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -842,6 +867,7 @@ MonoBehaviour:
   - {fileID: 2398039146048740388, guid: ed73698a254ef7148838f79665efe8e8, type: 3}
   - {fileID: 179128682651277302, guid: c511c00bff1181242a446bc47ad8827a, type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
+  pausePanel: {fileID: 0}
 --- !u!114 &352778926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +880,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd46f07f2d250448b3131e2f43b86fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &352778927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352778923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3efa42dc1dc114e8b200448442e716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 183255289}
+  gameManager: {fileID: 0}
+  gameIsPause: 0
+  gameOverScreen: {fileID: 84274959}
 --- !u!1 &355298720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1795,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 958892721}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352778927}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &958892721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,7 +1928,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 982900802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352778927}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &982900802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2827,7 +2893,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1669450694}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352778927}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1669450694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3082,7 +3160,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1723144718}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352778927}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: ReturnToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1723144718
 MonoBehaviour:
   m_ObjectHideFlags: 0

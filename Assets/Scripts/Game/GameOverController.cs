@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ public class GameOverController : MonoBehaviour
     public static void GameOver()
     {
         gameOver = true;
+    }
+    public static void Restart()
+    {
+        gameOver = false;
     }
     public static bool GetGameOver()
     {
