@@ -574,6 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   horizontalInput: 0
+  particuleMort: {fileID: 1587014826737633885, guid: e172d53f96dd09b45b7a8f3a297ccd11, type: 3}
 --- !u!65 &2389259762265230
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     private Vector3 position;
     Rigidbody rb;
+    public ParticleSystem particuleMort;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +76,12 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("walk_b", false);
             playerAnim.SetBool("Death_b", true);
             GameOverController.GameOver();
+            
+            if(GameSettings.ParticuleBool)
+            {
+                StartCoroutine(MortCoroutine());
+            }
+            
         }
     }
 
@@ -90,5 +97,13 @@ public class PlayerController : MonoBehaviour
     {
         other.isTrigger = false;
         Debug.Log("on trigger exit");
+    }
+    private IEnumerator MortCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ParticleSystem particleMort = Instantiate(particuleMort, this.gameObject.transform.position + new Vector3(0, 1, -3), particuleMort.transform.rotation);
+        particleMort.Play();
+        Destroy(gameObject);
+        
     }
 }
