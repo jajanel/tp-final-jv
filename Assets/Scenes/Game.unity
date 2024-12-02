@@ -1098,7 +1098,7 @@ MonoBehaviour:
   - {fileID: 5279811246306103102, guid: 407988f4fc9b1bb45b869e488ba63d38, type: 3}
   - {fileID: 4950779065795438720, guid: 1a696682a1828da4cbdc9b7c280d3fb0, type: 3}
   playerSpawnPoint: {x: 0, y: 0, z: 0}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 36592279}
 --- !u!114 &352778926
 MonoBehaviour:
   m_ObjectHideFlags: 0

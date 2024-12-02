@@ -55,8 +55,9 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Aucun prefab correspondant au personnage sélectionné.");
         }
 
-        gameMusic = FindObjectOfType<AudioSource>();
+     
         gameMusic.volume = GameSettings.SoundVolume;
+
     }
 
     // Update is called once per frame

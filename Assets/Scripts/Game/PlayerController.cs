@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 position;
     Rigidbody rb;
     public ParticleSystem particuleMort;
+    private AudioSource sonMort;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = position;
         }
+        sonMort = GetComponent<AudioSource>();
+        sonMort.volume = GameSettings.SoundVolume;
     }
 
     private void FixedUpdate()
@@ -76,7 +79,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("walk_b", false);
             playerAnim.SetBool("Death_b", true);
             GameOverController.GameOver();
-            
+            sonMort.Play();
             if(GameSettings.ParticuleBool)
             {
                 StartCoroutine(MortCoroutine());
