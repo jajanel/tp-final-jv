@@ -7,6 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] routes;
+    //public List<GameObject> routesList;
     public TextMeshProUGUI scoreText;
     public static int score;
     public Vector3 spawnPos;
@@ -98,10 +99,12 @@ public class GameManager : MonoBehaviour
 
     private void SpawnRoute()
     {
+        
         int index = Random.Range(0, routes.Length);
         GameObject route = routes[index];
         spawnz += route.GetComponent<BoxCollider>().size.z;
         spawnPos = new Vector3(-45, 0, spawnz);
+        
         Instantiate(route, spawnPos, route.transform.rotation);
     }
 }
