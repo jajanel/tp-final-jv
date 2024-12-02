@@ -21,11 +21,7 @@ public class GameSettingsPanel : MonoBehaviour
         audioSource.volume = GameSettings.SoundVolume;
         sliderVolume.value = GameSettings.SoundVolume;
         toggleParticule.isOn = GameSettings.ParticuleBool;
-        gameState = new GameState();
-        if (SaveSystem.CheckHasSave())
-            gameState = SaveSystem.LoadStateFromSave();
-        else gameState.difficulte = 0.5f;
-        sliderDifficulter.value = gameState.difficulte;
+        sliderDifficulter.value = GameSettings.Difficulter;
     }
 
     public void SetVolume()
@@ -41,9 +37,7 @@ public class GameSettingsPanel : MonoBehaviour
     }
     public void SetDifficulter()
     {
-        gameState.difficulte = sliderDifficulter.value;
-        SaveSystem.SaveGame(gameState);
-        Debug.Log("Difficulté : " + gameState.difficulte);
+        GameSettings.Difficulter = sliderDifficulter.value;
     }
     public void CloseButton()
     {

@@ -16,6 +16,11 @@ public class GameSettings : MonoBehaviour
         get => PlayerPrefs.GetInt("ParticuleBool", defaultValue: 1) == 1 ? true : false;
         set => PlayerPrefs.SetInt("ParticuleBool", value ? 1 : 0);
     }
-   
+    public static float Difficulter
+    {
+        get => PlayerPrefs.GetFloat("Difficulter", defaultValue: 0.5f);
+        set => PlayerPrefs.SetFloat("Difficulter", value);
+    }
+
 
 }

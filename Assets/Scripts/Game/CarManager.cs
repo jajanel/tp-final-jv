@@ -5,14 +5,13 @@ using UnityEngine;
 public class CarManager : MonoBehaviour
 {
     public GameObject[] voitures;
-    private float repeatDelay = 2f;
-    private float nextDelay = 5f;
+    private float nextDelay = 3f;
     private float progress;
     public Vector3 spawnPos;
     // Start is called before the first frame update
     void Start()
     {
-        progress = 0f;
+        progress = 6f;
         spawnPos = this.gameObject.transform.position;
     }
 
@@ -25,15 +24,17 @@ public class CarManager : MonoBehaviour
             //Spawner un obstacle et reset le progrès
             progress = 0f;
             SpawnVoiture();
-
+            float difficulter = (GameManager.score / 10) + GameSettings.Difficulter;
             //Prochain délai est aléatoire autour de repeatDelay
-            nextDelay = Random.Range(0.85f * repeatDelay, 1.15f * repeatDelay);
+            nextDelay = Random.Range(2f / difficulter, 3f / difficulter);
+            if (nextDelay < 0.75) {
+                nextDelay = 0.8f;
+            }
         }
     }
     private void SpawnVoiture()
     {
         int index = Random.Range(0, voitures.Length);
-        repeatDelay *= 0.99f;
         GameObject voiture = voitures[index];
         Instantiate(voiture, spawnPos, voiture.transform.rotation);
     }

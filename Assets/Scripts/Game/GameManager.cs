@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] routes;
     public TextMeshProUGUI scoreText;
-    int score;
+    public static int score;
     public Vector3 spawnPos;
     private float nextDelay = 5f;
     private float progress;
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameOverController.Restart();
         score = 0;
         scoreText.text = $"Score:{score}";
         playerSpawnPoint = new Vector3(40, 0, -8);
@@ -84,7 +85,7 @@ public class GameManager : MonoBehaviour
         {
             pausePanel.ClosePanel();
         }
-        gameState = new GameState();
+       
 
     }
 
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = $"Score: {score}";
+        gameState.score = score;
     }
 
     private void SpawnRoute()

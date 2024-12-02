@@ -35,6 +35,5 @@ public class SaveSystem : MonoBehaviour
 public class GameState
 {
     public int score;
-    public float difficulte;
     public int personnage;
 }
