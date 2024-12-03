@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameOverController.Restart();
-        score = 0;
+
         scoreText.text = $"Score:{score}";
         playerSpawnPoint = new Vector3(40, 0, -8);
         progress = 0f;
@@ -34,10 +34,15 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 10; i++) {
             SpawnRoute();
         }
-        gameState = new GameState();
         if (SaveSystem.CheckHasSave() && SaveSystem.ContinueGame)
         {
             gameState = SaveSystem.LoadStateFromSave();
+            score = gameState.score;
+        }
+        else
+        {
+            gameState = new GameState();
+            score = 0;
         }
 
         selectedCharacter = PlayerPrefs.GetString("SelectedCharacter");
