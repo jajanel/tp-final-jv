@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+
         if (SaveSystem.CheckHasSave())
         {
             bouttonContinuer.gameObject.SetActive(true);

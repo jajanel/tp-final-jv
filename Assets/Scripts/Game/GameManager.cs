@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         progress = 0f;
         pausePanel = GetComponent<PausePanel>();
         spawnPos = new Vector3(-45,0, spawnz);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             SpawnRoute();
         }
         if (SaveSystem.CheckHasSave() && SaveSystem.ContinueGame)
