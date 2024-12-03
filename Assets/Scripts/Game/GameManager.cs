@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameOverController.Restart();
-
-        scoreText.text = $"Score:{score}";
         playerSpawnPoint = new Vector3(40, 0, -8);
         progress = 0f;
         pausePanel = GetComponent<PausePanel>();
@@ -44,7 +42,7 @@ public class GameManager : MonoBehaviour
             gameState = new GameState();
             score = 0;
         }
-
+        scoreText.text = $"Score:{score}";
         selectedCharacter = PlayerPrefs.GetString("SelectedCharacter");
         Debug.Log($"Personnage sélectionné pour la scène : {selectedCharacter}");
 

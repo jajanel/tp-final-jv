@@ -9,6 +9,7 @@ public class GameOverController : MonoBehaviour
     public static void GameOver()
     {
         gameOver = true;
+        SaveSystem.ContinueGame = false;
     }
     public static void Restart()
     {

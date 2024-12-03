@@ -35,7 +35,7 @@ public class BackgroundFollow : MonoBehaviour
     {
         if (player != null)
         {
-            transform.position = player.position + new Vector3(-80, 0, 380);
+            transform.position = new Vector3(player.position.x,0,player.position.z) + new Vector3(-80, 0, 380);
         }
     }
 }
