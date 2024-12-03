@@ -7,6 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] routes;
+    private List<GameObject> routeAjouter = new List<GameObject>();
     public TextMeshProUGUI scoreText;
     public static int score;
     public Vector3 spawnPos;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     private float progress;
     private float repeatDelay = 2f;
     private float spawnz = 0f;
+    private int scoreMinDeleteRoute = 10;
     public PausePanel pausePanel;
     public GameObject[] characterPrefabs; // Liste des prefabs des personnages
     public Vector3 playerSpawnPoint; // Point d'apparition du joueur
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = SaveSystem.LoadStateFromSave();
             score = gameState.score;
+            scoreMinDeleteRoute += score;
         }
         else
         {
@@ -102,10 +105,17 @@ public class GameManager : MonoBehaviour
 
     private void SpawnRoute()
     {
+        int indexRouteDelete = 0;
         int index = Random.Range(0, routes.Length);
         GameObject route = routes[index];
         spawnz += route.GetComponent<BoxCollider>().size.z;
         spawnPos = new Vector3(-45, 0, spawnz);
-        Instantiate(route, spawnPos, route.transform.rotation);
+        routeAjouter.Add(Instantiate(route, spawnPos, route.transform.rotation));
+        if(score > scoreMinDeleteRoute)
+        {
+            Destroy(routeAjouter[0]);
+            routeAjouter.RemoveAt(0);
+            scoreMinDeleteRoute++;
+        }
     }
 }
