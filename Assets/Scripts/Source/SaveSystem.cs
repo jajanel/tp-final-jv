@@ -31,9 +31,42 @@ public class SaveSystem : MonoBehaviour
         }
         else return null;
     }
+
+
+    //Meilleur Score
+    public static void SaveGameMeilleurScore(GameStateMeilleurScore save)
+    {
+        var serializedSave = JsonUtility.ToJson(save);
+
+        var path = Path.Combine(Application.persistentDataPath, $"game.MeilleurScoreSave");
+        File.WriteAllText(path, serializedSave);
+    }
+    public static bool CheckHasSaveMeilleurScore()
+    {
+        var path = Path.Combine(Application.persistentDataPath, $"game.MeilleurScoreSave");
+        if (File.Exists(path))
+        {
+            return true;
+        }
+        else return false;
+    }
+    public static GameStateMeilleurScore LoadStateFromSaveMeilleurScore()
+    {
+        var path = Path.Combine(Application.persistentDataPath, $"game.MeilleurScoreSave");
+        if (CheckHasSaveMeilleurScore())
+        {
+            var serializedSave = File.ReadAllText(path);
+            return JsonUtility.FromJson<GameStateMeilleurScore>(serializedSave);
+        }
+        else return null;
+    }
 }
 public class GameState
 {
     public int score;
     public int personnage;
+}
+public class GameStateMeilleurScore
+{
+    public int meilleurScore;
 }

@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] routes;
     private List<GameObject> routeAjouter = new List<GameObject>();
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI meilleurScoreText;
     public static int score;
+    public int meilleurScore;
     public Vector3 spawnPos;
     private float nextDelay = 5f;
     private float progress;
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
     public Vector3 playerSpawnPoint; // Point d'apparition du joueur
     private string selectedCharacter;
     public GameState gameState;
+    public GameStateMeilleurScore gameStateMeilleurScore;
     public AudioSource gameMusic;
 
     // Start is called before the first frame update
@@ -45,7 +48,20 @@ public class GameManager : MonoBehaviour
             gameState = new GameState();
             score = 0;
         }
+        if(SaveSystem.CheckHasSaveMeilleurScore())
+        {
+            gameStateMeilleurScore = SaveSystem.LoadStateFromSaveMeilleurScore();
+            meilleurScore = gameStateMeilleurScore.meilleurScore;
+        }
+        else
+        {
+            gameStateMeilleurScore = new GameStateMeilleurScore();
+            meilleurScore = 0;
+        }
+
+
         scoreText.text = $"Score:{score}";
+        meilleurScoreText.text = $"Meilleur Score:{meilleurScore}";
         selectedCharacter = PlayerPrefs.GetString("SelectedCharacter");
         Debug.Log($"Personnage sélectionné pour la scène : {selectedCharacter}");
 
@@ -60,8 +76,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Aucun prefab correspondant au personnage sélectionné.");
         }
-
-     
         gameMusic.volume = GameSettings.SoundVolume;
 
     }
@@ -92,7 +106,13 @@ public class GameManager : MonoBehaviour
         {
             pausePanel.ClosePanel();
         }
-       
+       if(score > meilleurScore)
+        {
+            meilleurScore = score;
+            gameStateMeilleurScore.meilleurScore = score;
+            meilleurScoreText.text = $"Meilleur Score:{meilleurScore}";
+            SaveSystem.SaveGameMeilleurScore(gameStateMeilleurScore);
+        }
 
     }
 
